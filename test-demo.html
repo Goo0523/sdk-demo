@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <style>
+        body {
+            margin: 20px;
+        }
+        .card {
+            margin: 0 auto 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <el-card class="card">
+            <div slot="header">Checkbox</div>
+            <div id="bothub-widget-16hp"></div>
+            <div>
+                <el-button type="primary" size="medium" @click="window.BH.Event.addedToCart({
+                    sku: 14379168759861,
+                    name: 'T-shirt',
+                    currency: 'USD',
+                    price: 200,
+                })">加入购物车</el-button>
+                <el-button type="primary" size="medium" @click="window.BH.Event.addedToWishlist({
+                    sku: 14379168759861,
+                    name: 'T-shirt',
+                    currency: 'USD',
+                    price: 200,
+                })">加入愿望清单</el-button>
+                <!-- <el-button type="primary" size="medium" @click="window.BH.Event.addedToCart({
+                    widget: 'bothub-widget-16hp',
+                    sku: 14379168759861,
+                })">结算购物车</el-button>
+                <el-button type="primary" size="medium" @click="window.BH.Event.addedToCart({
+                    widget: 'bothub-widget-16hp',
+                    sku: 14379168759861,
+                })">商品购买</el-button> -->
+            </div>
+        </el-card>
+        <el-card class="card">
+            <div slot="header">Send To Messenger</div>
+            <div id="bothub-widget-168l"></div>
+        </el-card>
+        <el-card class="card">
+            <div slot="header">Messenger Us</div>
+            <div id="bothub-widget-mf3"></div>
+        </el-card>
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://storage.googleapis.com/customer_files_prod/Cute animate/Cute animate_channel_script_q9sQ8miGBw.js"></script>
+    <script>
+        new Vue({
+            el: '#root'
+        })
+    </script>
+    <script>
+        window.bhAsyncInit.push(function () {
+            window.BH.Widget.setConfig({
+                id: 'bothub-widget-168l',
+                accountLink: `id-${window.location.hash.slice(1)}`,
+            })
+        });
+        
+    </script>
+</body>
+
+</html>

@@ -8,13 +8,70 @@
 </head>
 
 <body>
-    <div id="bothub-widget-168l"></div>
-    <script src="https://storage.googleapis.com/customer_files_prod/Cute animate/Cute animate_channel_script_q9sQ8miGBw.js"></script>
+    <div id="bothub-widget-fxf"></div>
+    <script src="https://storage.googleapis.com/customer_files_uat/电商机器人/电商机器人_channel_script_ebPfkRi53k.js"></script>
+    <script>
+        var data = {
+              "recipient_name":"Stephane Crozatier",  // 收件人全名
+              "order_number":"12345678902", // 订单号
+              "currency":"USD", // 订单货币
+              "payment_method":"Visa 2345",     // 支付方式，可以为任意字符串，例如"Paypal", "Paid"
+              "order_url":"http://petersapparel.parseapp.com/order?order_id=123456", // 订单链接
+              "timestamp":"1428444852",      // 下单时间
+              "address":{  // 订单地址信息
+                "street_1":"1 Hacker Way", 
+                "street_2":"",
+                "city":"Menlo Park",
+                "postal_code":"94025",
+                "state":"CA",
+                "country":"US"
+              },
+              "summary":{ // 订单金额总计
+                "subtotal":75.00,
+                "shipping_cost":4.95,
+                "total_tax":6.19,
+                "total_cost":56.14
+              }, // 下单时使用的优惠。若没有，adjustments可以传空数组
+              "adjustments":[
+                {
+                  "name":"New Customer Discount",
+                  "amount":20
+                },
+                {
+                  "name":"$10 Off Coupon",
+                  "amount":10
+                }
+              ],
+              "elements":[ // 物品详细信息
+                {
+                  "title":"Classic White T-Shirt",
+                  "subtitle":"100% Soft and Luxurious Cotton",
+                  "quantity":2,
+                  "price":50,
+                  "currency":"USD",
+                  "image_url":"https://fakeimg.pl/200x200/"
+                },
+                {
+                  "title":"Classic Gray T-Shirt",
+                  "subtitle":"100% Soft and Luxurious Cotton",
+                  "quantity":1,
+                  "price":25,
+                  "currency":"USD",
+                  "image_url":"https://fakeimg.pl/200x200/"
+                }
+              ]
+            };
+    </script>
     <script>
         window.bhAsyncInit.push(function () {
             window.BH.Widget.setConfig({
-                id: 'bothub-widget-168l',
-                accountLink: `user_id-${window.location.hash}`,
+                id: 'bothub-widget-fxf',
+                message: {
+                    // 这里是事件数据的类型，'feed' 或者是 'receipt'
+                    type: 'receipt',
+                    // 这里是完整的数据，内容替换成真实的数据
+                    data: data,
+                },
             })
         });
     </script>
